@@ -1,11 +1,11 @@
 const Pusher = require('pusher')
 
-const pushMessage = message => {
+const pushMessage = (message, channel, event) => {
   const PUSHER_APP_ID = process.env.PUSHER_APP_ID
   const PUSHER_KEY = process.env.PUSHER_KEY
   const PUSHER_SECRET = process.env.PUSHER_SECRET
   const PUSHER_CLUSTER = process.env.PUSHER_CLUSTER
-  
+
   const pusher = new Pusher({
     appId: PUSHER_APP_ID,
     key: PUSHER_KEY,
@@ -16,7 +16,7 @@ const pushMessage = message => {
 
   return new Promise( (success, fail) => {
     if(!!message) {
-      pusher.trigger('my-channel', 'my-event', {
+      pusher.trigger(channel, event, {
         "message": message
       })
       success(message)
