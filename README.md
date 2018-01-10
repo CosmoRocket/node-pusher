@@ -4,6 +4,15 @@ A simple subscribe / publish interface using Pusher
 ## Routes
 ### POST /push
 - Publishes a message to the pusher API
+```javascript
+Content-Type: application/json
+
+{
+  "message": "Hello Alex",
+  "channel": "my-channel",
+  "event": "my-event
+}
+```
 - To subscribe to a message, follow the html below
 ```javascript
 <!DOCTYPE html>
