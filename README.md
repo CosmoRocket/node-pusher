@@ -10,7 +10,7 @@ Content-Type: application/json
 {
   "message": "Hello Alex",
   "channel": "my-channel",
-  "event": "my-event
+  "event": "my-event"
 }
 ```
 - To subscribe to a message, follow the html below
